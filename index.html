@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kumpulan tautan blog, proyek, dan halaman karya Kang Ruli di kangruli.web.id">
+<title>Kumpulan Link | Kang Ruli</title>
+<style>
+:root{
+  --bg:#f6f7fb;--surface:#ffffff;--fg:#0f172a;--muted:#64748b;--line:#e2e8f0;
+  --accent:#4f46e5;--accent-2:#0ea5e9;--chip:#eef2ff;--chip-fg:#4338ca;
+  --shadow:0 1px 2px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.06);
+  --shadow-hover:0 2px 4px rgba(15,23,42,.08),0 12px 28px rgba(79,70,229,.14);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1020;--surface:#131a2e;--fg:#e2e8f0;--muted:#94a3b8;--line:#243049;
+    --accent:#818cf8;--accent-2:#38bdf8;--chip:#1e2a4a;--chip-fg:#c7d2fe;
+    --shadow:0 1px 2px rgba(0,0,0,.4);--shadow-hover:0 12px 28px rgba(0,0,0,.45);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--fg);line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+
+/* Hero */
+.hero{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);
+  color:#fff;padding:56px 20px 88px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto -120px -160px auto;width:420px;height:420px;
+  border-radius:50%;background:rgba(255,255,255,.12);
+}
+.hero-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{
+  display:inline-block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px;
+}
+.hero h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
+.hero p{margin:0;max-width:600px;opacity:.92;font-size:1.05rem}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stat{
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);
+  border-radius:14px;padding:10px 16px;min-width:120px;
+}
+.stat b{display:block;font-size:1.4rem;line-height:1.1}
+.stat span{font-size:.8rem;opacity:.9}
+
+/* Main */
+main{max-width:1040px;margin:-56px auto 0;padding:0 20px 64px;position:relative;z-index:2}
+.toolbar{
+  background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  padding:16px;box-shadow:var(--shadow);position:sticky;top:12px;z-index:5;
+}
+.search{position:relative}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
+.search input{
+  width:100%;padding:12px 14px 12px 42px;font-size:1rem;font-family:inherit;
+  border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(79,70,229,.15)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;max-height:112px;overflow:auto}
+.chip{
+  border:1px solid var(--line);background:transparent;color:var(--muted);
+  padding:6px 12px;border-radius:999px;font:inherit;font-size:.85rem;cursor:pointer;
+  transition:all .15s;white-space:nowrap;
+}
+.chip:hover{color:var(--chip-fg);border-color:var(--accent)}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.meta{display:flex;justify-content:space-between;align-items:center;margin:20px 4px 8px;color:var(--muted);font-size:.9rem}
+
+/* Sections & cards */
+.section{margin-top:28px}
+.section-title{display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:700;margin:0 4px 14px}
+.section-title .count{
+  font-size:.75rem;font-weight:600;background:var(--chip);color:var(--chip-fg);
+  padding:2px 10px;border-radius:999px;
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{
+  display:flex;flex-direction:column;gap:10px;min-height:118px;
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:16px 16px 14px;box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--accent)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.host{font-size:.72rem;font-weight:600;color:var(--chip-fg);background:var(--chip);padding:3px 9px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:75%}
+.arrow{color:var(--muted);font-size:1rem;transition:transform .18s, color .18s}
+.card:hover .arrow{transform:translate(2px,-2px);color:var(--accent)}
+.title{font-weight:650;font-size:.98rem;line-height:1.35;color:var(--fg);margin:0;word-break:break-word}
+.url{font-size:.74rem;color:var(--muted);word-break:break-all;margin-top:auto;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+.empty{text-align:center;padding:48px 16px;color:var(--muted);display:none}
+.empty.show{display:block}
+
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 20px 40px}
+.to-top{
+  position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;
+  border:none;background:var(--accent);color:#fff;font-size:1.1rem;cursor:pointer;
+  box-shadow:var(--shadow-hover);opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:560px){
+  .hero{padding:40px 18px 76px}
+  .stat{min-width:0;flex:1}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Kumpulan Tautan</span>
+    <h1>Jelajahi Karya &amp; Tulisan<br>Kang Ruli</h1>
+    <p>Kumpulan artikel blog, proyek web, dan halaman karya yang terhimpun di kangruli.web.id.</p>
+    <div class="stats">
+      <div class="stat"><b id="statTotal">0</b><span>Total tautan</span></div>
+      <div class="stat"><b id="statSites">0</b><span>Situs &amp; subdomain</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+      </svg>
+      <input id="q" type="search" placeholder="Cari judul artikel atau alamat link..." autocomplete="off">
+    </label>
+    <div class="filters" id="filters" role="toolbar" aria-label="Filter situs"></div>
+  </div>
+
+  <div class="meta"><span id="count"></span></div>
+  <div id="sections"></div>
+  <div class="empty" id="empty">Tidak ada tautan yang cocok dengan pencarian Anda.</div>
+</main>
+
+<footer>Dibuat dengan rapi untuk memudahkan Anda menjelajah. &copy; Kang Ruli</footer>
+
+<button class="to-top" id="toTop" aria-label="Kembali ke atas">&uarr;</button>
+
+<script>
+const LINKS = [
+"https://www.kangruli.web.id/",
+"https://kangruli.web.id/",
+"https://www.kangruli.web.id/2024/01/writing.html",
+"https://www.kangruli.web.id/2026/04/ai-untuk-guru-smk-2026-rahasia-mengajar.html",
+"https://www.kangruli.web.id/2026/03/10-ai-tools-gratis-untuk-membuat-konten.html",
+"https://digital-learnstudio.kangruli.web.id/",
+"https://www.kangruli.web.id/2025/11/dampak-sosial-informatika.html",
+"https://www.kangruli.web.id/2011/10/sejarah-fotografi.html",
+"https://www.kangruli.web.id/p/shortcodes.html",
+"https://www.kangruli.web.id/p/contact.html",
+"https://www.kangruli.web.id/2025/01/dokumen-paparan-pembelajaran-mendalam.html",
+"https://www.kangruli.web.id/2022/08/solusi-standard-untuk-masalah.html",
+"https://www.kangruli.web.id/2026/04/teknologi-cloud.html",
+"https://www.kangruli.web.id/2017/12/next-phase.html",
+"https://portofolio.kangruli.web.id/",
+"https://www.kangruli.web.id/2026/02/pelatihan-yang-berdampak-ai-dari-wacana.html",
+"https://www.kangruli.web.id/2022/07/port-moresby-school-to-have-new-ict-lab.html",
+"https://biztrend.kangruli.web.id/",
+"https://blog.kangruli.web.id/",
+"https://www.kangruli.web.id/2025/04/torpedoes-missiles-and-maritime-growth.html?m=1",
+"https://www.kangruli.web.id/2025/01/beer-o-london-calling.html",
+"https://eigeradventure.kangruli.web.id/",
+"https://www.kangruli.web.id/2024/09/prompt-gambar-ai-ruang-kantor-bergaya.html",
+"https://www.kangruli.web.id/2025/02/i-ndian-markets-poised-for-post-budget.html",
+"https://www.kangruli.web.id/2022/08/cara-membuka-whatsapp-web-di-laptop.html?m=1",
+"https://www.kangruli.web.id/2012/04/4-langkah-memotret-dalam-cahaya-rendah.html",
+"https://www.kangruli.web.id/2023/07/sikap-atau-attitude-ciri-fungsi_6.html",
+"https://www.kangruli.web.id/2025/09/panduan-master-java-2025-dari-nol.html",
+"https://www.kangruli.web.id/2007/03/formal-desperation.html",
+"https://undangan-digital.kangruli.web.id/",
+"https://www.kangruli.web.id/2022/08/papua-new-guinea-lacks-affordable.html",
+"https://www.kangruli.web.id/2023/10/cuan-dari-blogger-perkenalan-dengan.html",
+"https://www.kangruli.web.id/2022/05/fistlogic-budak-gemuk-bangkit-dari.html",
+"https://www.kangruli.web.id/2022/05/nasi-ayam-bajet.html",
+"https://agenda-kelas.kangruli.web.id/",
+"https://www.kangruli.web.id/2025/04/cara-membuat-toko-online-sendiri-tanpa.html",
+"https://www.kangruli.web.id/2023/12/the-top-10-fitness-apps-to.html",
+"https://www.kangruli.web.id/2025/05/panduan-lengkap-youtube-affiliate-cara.html",
+"https://www.kangruli.web.id/2026/04/claude-design-rahasia-desain-ai-yang.html?m=1",
+"https://www.kangruli.web.id/2024/03/spesifikasi-asus-zenbook-duo-x8406.html?m=1",
+"https://www.kangruli.web.id/2026/04/peluang-emas-lowongan-manajer-kopdes.html",
+"https://www.kangruli.web.id/2025/05/harga-emas-dunia-diprediksi-melemah-apa.html",
+"https://www.kangruli.web.id/2024/12/flight-risk.html",
+"https://www.kangruli.web.id/2026/06/integrasi-pancawaluya-dalam-perangkat.html",
+"https://www.kangruli.web.id/2024/07/keputusan-investasi-pengertian-tujuan.html",
+"https://www.kangruli.web.id/2009/11/sedikit-tentang-membersihkan-serta_9.html",
+"https://rpm.kangruli.web.id/",
+"https://www.kangruli.web.id/2018/01/cara-mengetahui-pergerakan-arah-dollar.html",
+"https://www.kangruli.web.id/2025/05/10-kategori-resep-obat-di-apotek-dan.html",
+"https://www.kangruli.web.id/2026/04/legalitas-ijazah-di-mata-hukum.html?m=1",
+"https://footydash.kangruli.web.id/",
+"https://www.kangruli.web.id/2025/07/perangkat-pembelajaran-deep-learning_14.html",
+"https://www.kangruli.web.id/2023/03/quantum-computing-next-revolution-in.html",
+"https://www.kangruli.web.id/2022/11/university-of-png-takes-step-towards.html",
+"https://www.kangruli.web.id/2025/02/apa-itu-predatory-pricing-strategi.html?m=1",
+"https://www.kangruli.web.id/2026/05/apakah-amerika-sembunyikan-alien.html",
+"https://www.kangruli.web.id/2025/03/keutamaan-sholat-tarawih-berapa-rakaat.html",
+"https://www.kangruli.web.id/2026/03/7-ai-terbaik-untuk-menulis-artikel-seo.html",
+"https://www.kangruli.web.id/2026/02/panther-lake-laptops-revolusi-performa.html",
+"https://www.kangruli.web.id/?m=1",
+"https://www.kangruli.web.id/2026/03/cara-membuat-gambar-dengan-ai-gratis.html",
+"https://www.kangruli.web.id/2024/02/ketum-persis-kecurangan-dan-hoaks_3.html",
+"https://www.kangruli.web.id/2025/05/gaya-hidup-sehat-2025-panduan-lengkap.html",
+"https://www.kangruli.web.id/2024/12/download-leopard-flamingo-hybrid-animal.html",
+"https://www.kangruli.web.id/2022/08/minas-shopping-tem-horario-especial-de.html",
+"https://www.kangruli.web.id/2025/01/download-ai-hybrid-animals-free-image.html",
+"https://www.kangruli.web.id/2025/03/indian-markets-infrastructure.html",
+"https://www.kangruli.web.id/2026/06/daftar-penerima-bos-afirmasi-2026-resmi.html",
+"https://www.kangruli.web.id/2020/11/sedikit-tentang-jenis-jenis-keju-paling.html",
+"https://www.kangruli.web.id/2010/09/sedikit-tentang-teknik-memancing_4.html?m=1",
+"https://www.kangruli.web.id/2025/05/hasil-uji-kompetensi-jabatan-fungsional.html",
+"https://www.kangruli.web.id/2025/06/kang-opik-dan-komunitas-ngejah.html",
+"https://www.kangruli.web.id/2024/12/top-10-comic-books-november-2024.html?m=1",
+"https://www.kangruli.web.id/2025/03/presiden-prabowo-umumkan-pencairan-thr.html",
+"https://www.kangruli.web.id/2023/07/website-remove-bg-online-cara-mengganti.html",
+"https://www.kangruli.web.id/2022/06/munchy-lexus-mixed-nuts-gabungan-kacang.html?m=1",
+"https://www.kangruli.web.id/2011/11/komponen-dasar-kamera-dslr-bagian-4.html?m=1",
+"https://www.kangruli.web.id/2026/04/rahasia-di-balik-lemari-tua-saat-hutang.html?m=1",
+"https://www.kangruli.web.id/2026/04/jangan-sampai-salah-beli-panduan.html",
+"https://www.kangruli.web.id/2026/07/cyber-shield-cara-efektif-menjaga.html",
+"https://www.kangruli.web.id/2024/11/zee-entertainment-risky-bet-amid.html?m=1",
+"https://www.kangruli.web.id/2024/03/top-10-new-technology-trends-for-2024.html?m=1",
+"https://www.kangruli.web.id/2025/05/100-shortcut-keyboard-microsoft-word.html",
+"https://www.kangruli.web.id/2026/04/kumpulan-link-pembelajaran-ifppid.html",
+"https://www.kangruli.web.id/2025/03/strategi-efektif-mengelola-keuangan.html",
+"https://www.kangruli.web.id/2022/06/top-five-smart-led-tv-under-50000-rs.html",
+"https://portofolio.kangruli.web.id/kontak.html",
+"https://www.kangruli.web.id/2024/11/download-frog-dinosaur-hybrid-free.html?m=1",
+"https://www.kangruli.web.id/2026/04/dari-kodak-ke-sony-evolusi-menakjubkan.html",
+"https://www.kangruli.web.id/2026/04/7-contoh-karya-fotografi-yang-memukau.html",
+"https://www.kangruli.web.id/2024/03/job-autonomy-pengertian-aspek-indikator.html?m=1",
+"https://www.kangruli.web.id/2025/02/new-venue.html",
+"https://www.kangruli.web.id/2024/01/pembelajaran-critical-incident.html",
+"https://www.kangruli.web.id/2021/10/kelas-campuran.html",
+"https://www.kangruli.web.id/2022/08/caxias-shopping-promove-feira.html",
+"https://www.kangruli.web.id/2025/01/konten-kreator-muda-inspirasi-dari.html",
+"https://www.kangruli.web.id/2026/05/strategi-pengalihan-isu-bongkar-fakta.html?hl=ar",
+"https://www.kangruli.web.id/2026/02/ketika-pasar-saham-jakarta-terjungkal.html?m=1",
+"https://dkv-learnstudio.kangruli.web.id/",
+"https://portofolio.kangruli.web.id/ringkasan.html",
+"https://portofolio.kangruli.web.id/pengalaman.html",
+"https://www.kangruli.web.id/2023/03/classical-computing-foundation-of.html",
+"https://www.kangruli.web.id/2025/08/analisis-kompetensi-technopreneurship.html",
+"https://www.kangruli.web.id/2025/01/flash-focus-fast-facts-for-smart_1.html?m=1",
+"https://www.kangruli.web.id/2026/05/mencari-ketulusan-dalam-sandiwara-dunia.html",
+"https://www.kangruli.web.id/2024/07/brand-experience-pengertian-indikator_0.html",
+"https://www.kangruli.web.id/2022/08/americas-shopping-promove-tributo-banda.html",
+"https://www.kangruli.web.id/2022/05/job-graduate-engineer-vodafone-png.html",
+"https://www.kangruli.web.id/2025/03/panduan-lengkap-investasi-saham-untuk.html",
+"https://www.kangruli.web.id/2009/07/merger-dan-akuisisi-pengertian-jenis.html",
+"https://www.kangruli.web.id/2024/02/mengenal-lebih-dekat-kamera-dslr.html",
+"https://www.kangruli.web.id/2024/12/top-10-comic-books-november-2024.html",
+"https://www.kangruli.web.id/2011/11/komponen-dasar-kamera-dslr-bagian-5.html",
+"https://www.kangruli.web.id/2023/01/how-to-start-profitable-blogging-2023.html",
+"https://www.kangruli.web.id/2022/06/munchy-lexus-mixed-nuts-gabungan-kacang.html",
+"https://www.kangruli.web.id/2023/01/5-hal-ini-jangan-dilakukan-mahasiswa_4.html",
+"https://www.kangruli.web.id/2025/02/pengenalan-jurusan-desain-komunikasi.html?m=1",
+"https://www.kangruli.web.id/2022/06/4k-tv-55-inch.html",
+"https://www.kangruli.web.id/2022/10/jobs-at-png-ict-department.html",
+"https://www.kangruli.web.id/2025/01/flash-focus-fast-facts-for-smart_1.html",
+"https://www.kangruli.web.id/2022/06/web-based-system-launched-for-png.html",
+"https://www.kangruli.web.id/2024/11/zee-entertainment-risky-bet-amid.html",
+"https://www.kangruli.web.id/p/sitemap.html?m=1",
+"https://www.kangruli.web.id/2025/01/sedikit-tentang-arsitektur-dekonstruksi.html",
+"https://www.kangruli.web.id/2024/01/pengembangan-wilayah-pengertian-aspek.html",
+"https://www.kangruli.web.id/2024/11/download-spinosaurus-tortoise-hybrid.html",
+"https://www.kangruli.web.id/2025/03/vodafone-idea-vi-ltd-rs.html"
+];
+
+const ALL_KEY = '__all__';
+let activeGroup = ALL_KEY;
+
+function label(u) {
+  const url = new URL(u);
+  let seg = url.pathname.split('/').filter(Boolean).pop() || '';
+  seg = decodeURIComponent(seg).replace(/\.html$/, '');
+  if (!seg || seg === 'index') return url.hostname;
+  seg = seg.replace(/[-_]+/g, ' ').trim();
+  return seg.charAt(0).toUpperCase() + seg.slice(1);
+}
+
+function groupOf(u) {
+  const h = new URL(u).hostname;
+  return (h === 'kangruli.web.id' || h === 'www.kangruli.web.id')
+    ? 'Blog utama'
+    : h.replace('.kangruli.web.id', '');
+}
+
+function groupLabel(g) {
+  return g === 'Blog utama' ? 'Blog utama' : g.charAt(0).toUpperCase() + g.slice(1);
+}
+
+function buildFilters() {
+  const groups = [...new Set(LINKS.map(groupOf))].sort((a, b) => {
+    if (a === 'Blog utama') return -1;
+    if (b === 'Blog utama') return 1;
+    return a.localeCompare(b);
+  });
+  const wrap = document.getElementById('filters');
+  const makeChip = (key, text, count) => {
+    const b = document.createElement('button');
+    b.className = 'chip' + (key === activeGroup ? ' active' : '');
+    b.textContent = text + ' · ' + count;
+    b.dataset.key = key;
+    b.addEventListener('click', () => {
+      activeGroup = key;
+      wrap.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.key === key));
+      render(document.getElementById('q').value);
+    });
+    return b;
+  };
+  wrap.appendChild(makeChip(ALL_KEY, 'Semua', LINKS.length));
+  groups.forEach(g => {
+    wrap.appendChild(makeChip(g, groupLabel(g), LINKS.filter(u => groupOf(u) === g).length));
+  });
+  document.getElementById('statSites').textContent = groups.length;
+  document.getElementById('statTotal').textContent = LINKS.length;
+}
+
+function render(query) {
+  const sections = document.getElementById('sections');
+  const f = query.trim().toLowerCase();
+  const groups = {};
+  let shown = 0;
+
+  LINKS.forEach(u => {
+    const g = groupOf(u);
+    if (activeGroup !== ALL_KEY && g !== activeGroup) return;
+    if (f && !(label(u) + ' ' + u).toLowerCase().includes(f)) return;
+    (groups[g] = groups[g] || []).push(u);
+    shown++;
+  });
+
+  const keys = Object.keys(groups).sort((a, b) => {
+    if (a === 'Blog utama') return -1;
+    if (b === 'Blog utama') return 1;
+    return a.localeCompare(b);
+  });
+
+  sections.textContent = '';
+  keys.forEach(g => {
+    const sec = document.createElement('section');
+    sec.className = 'section';
+
+    const title = document.createElement('h2');
+    title.className = 'section-title';
+    title.textContent = groupLabel(g);
+    const cnt = document.createElement('span');
+    cnt.className = 'count';
+    cnt.textContent = groups[g].length;
+    title.appendChild(cnt);
+    sec.appendChild(title);
+
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    groups[g].forEach(u => {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = u;
+      a.target = '_blank';
+      a.rel = 'noopener';
+
+      const top = document.createElement('div');
+      top.className = 'card-top';
+      const host = document.createElement('span');
+      host.className = 'host';
+      host.textContent = new URL(u).hostname;
+      const arrow = document.createElement('span');
+      arrow.className = 'arrow';
+      arrow.textContent = '↗';
+      top.append(host, arrow);
+
+      const t = document.createElement('p');
+      t.className = 'title';
+      t.textContent = label(u);
+
+      const url = document.createElement('span');
+      url.className = 'url';
+      url.textContent = u;
+
+      a.append(top, t, url);
+      grid.appendChild(a);
+    });
+    sec.appendChild(grid);
+    sections.appendChild(sec);
+  });
+
+  document.getElementById('count').textContent =
+    'Menampilkan ' + shown + ' dari ' + LINKS.length + ' tautan';
+  document.getElementById('empty').classList.toggle('show', shown === 0);
+}
+
+document.getElementById('q').addEventListener('input', e => render(e.target.value));
+
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 400));
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+buildFilters();
+render('');
+</script>
+</body>
+</html>
